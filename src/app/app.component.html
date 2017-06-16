@@ -1,9 +1,9 @@
-<app-nav-bar></app-nav-bar>
+<app-nav-bar (featureSelected)="onNavigate($event)"></app-nav-bar>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-meals></app-meals>
-      <app-grocery-list></app-grocery-list>
+      <app-meals *ngIf="displayedFeature === 'meal-list'"></app-meals>
+      <app-grocery-list *ngIf="displayedFeature !== 'meal-list'"></app-grocery-list>
     </div>
   </div>
 </div>
